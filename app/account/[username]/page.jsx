@@ -54,6 +54,7 @@ const Account = () => {
             >
               <Link
                 href={`/post/${author}/${_id}`}
+                prefetch={false}
                 className="text-black transition hover:text-blue-800"
               >
                 {title}

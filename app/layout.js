@@ -1,5 +1,5 @@
 // "use client";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 // import Sidebar from "./components/sidebar/Sidebar";
 import "./globals.css";
 import { Inter } from "next/font/google";

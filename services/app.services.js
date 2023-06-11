@@ -106,3 +106,16 @@ export const loginUser = async ({ username, password }) => {
     console.log(err);
   }
 };
+
+export const registerUser = async ({ email, password, username }) => {
+  try {
+    const response = await instance.post("http://localhost:5000/api/users", {
+      email,
+      password,
+      username,
+    });
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+};

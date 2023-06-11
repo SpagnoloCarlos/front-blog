@@ -5,6 +5,7 @@ const ItemsBlog = ({ blog }) => {
     <Link
       href={`/post/${blog["author"]}/${blog["_id"]}`}
       as={`/post/${blog["author"]}/${blog["_id"]}`}
+      prefetch={false}
       className="flex flex-col items-start justify-between w-full gap-4 p-4 transition bg-white border-t cursor-pointer border-t-gray-100 md:w-full hover:drop-shadow-md"
     >
       <div>

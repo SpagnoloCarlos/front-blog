@@ -6,6 +6,8 @@ const ItemSidebar = ({ blog, index }) => {
       <span>{index}</span>
       <Link
         href={`/post/${blog["author"]}/${blog["_id"]}`}
+        as={`/post/${blog["author"]}/${blog["_id"]}`}
+        prefetch={false}
         className="overflow-hidden text-fuchsia-900 text-ellipsis whitespace-nowrap"
       >
         {blog?.["title"]}

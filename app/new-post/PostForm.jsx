@@ -23,7 +23,7 @@ const PostForm = () => {
           title,
           subtitle,
           content,
-          author: status.data?.userName,
+          author: status.data?.username,
         });
         const { data } = response;
         if (data.status === 0) {

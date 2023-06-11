@@ -2,6 +2,7 @@ import { getBlogBy } from "@/services/app.services";
 
 import { Inter, Comic_Neue } from "next/font/google";
 import Rating from "./Rating";
+import Link from "next/link";
 
 const comic = Comic_Neue({ subsets: ["latin"], weight: "400" });
 
@@ -20,9 +21,13 @@ const Post = async ({ params }) => {
           </h1>
           <h2 className="w-full text-center text-gray-800">{post.subtitle}</h2>
           <div className="flex flex-row items-center self-start gap-6">
-            <h4 className="px-2 py-1 rounded-md bg-fuchsia-200 text-fuchsia-800">
+            <Link
+              href={`/profile/${post.author}`}
+              prefetch={false}
+              className="px-2 py-1 rounded-md bg-fuchsia-200 text-fuchsia-800"
+            >
               {post.author}
-            </h4>
+            </Link>
             <h5 className={comic.className}>{post.createdAt} 🕒</h5>
             <div className="mb-1">
               <span
