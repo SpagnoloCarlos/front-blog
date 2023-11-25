@@ -1,9 +1,13 @@
-// "use client";
 import ItemsBlog from "./ItemsBlog";
-import { getAllBlogs } from "../../../services/app.services";
+import { getAccessToken, getAllBlogs } from "../../../services/app.services";
 
 const BlogsHome = async () => {
-  const response = await getAllBlogs();
+  const access = await getAccessToken();
+  const {
+    data: { token },
+  } = access;
+
+  const response = await getAllBlogs(token);
   const {
     data: { data: blogs },
   } = response;

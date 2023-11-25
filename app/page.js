@@ -14,7 +14,7 @@ export default function Home() {
         </h1>
         <BlogsHome />
       </section>
-      <Sidebar />
+      {/* <Sidebar /> */}
     </>
   );
 }

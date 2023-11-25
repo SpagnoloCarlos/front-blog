@@ -3,9 +3,29 @@ import axios from "axios";
 
 const instance = axios.create();
 
-export const getAllBlogs = async () => {
+export const getAccessToken = async () => {
   try {
-    const response = await instance.get("http://localhost:5000/api/blogs");
+    const response = await instance.post(
+      "http://localhost:5000/api/accessToken",
+      {
+        client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
+        client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
+      }
+    );
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const getAllBlogs = async (token) => {
+  try {
+    const response = await instance.get("http://localhost:5000/api/blogs", {
+      headers: {
+        Accept: "*/*",
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response;
   } catch (err) {
     console.log(err);
